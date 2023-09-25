@@ -8,11 +8,23 @@
 </head>
 <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css">
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <body>
     <!-- Navbar area -->
     {% include 'navbar.html' %}
     <div class="container">
+        <br>
+        <!-- Notification Messages -->
+        {% for message in messages %}
+
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+        <p class="alert alert-success float-center text-center">
+            <i class="fa fa-check" aria-hidden="true"></i> &nbsp; {{message}}
+        </p>
+        {% endif%}
+
+        {% endfor %}
         
     </div>
     {% block content %}
