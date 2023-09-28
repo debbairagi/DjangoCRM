@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load socialaccount %}
 {% load crispy_forms_tags %}
 {% block content %}
 <body>
@@ -28,6 +29,7 @@
       >Create Account</button>
     </form>
     <br />
+      <a href="{% provider_login_url 'google' %}"><button class="btn btn-primary w-100 btn-black p-2" type="button">Continue With Google</button></a>
     <div class="text-center">
       <p>Already have an account ? <a href="{% url 'my_login' %}">Login</a> </p>
     </div>

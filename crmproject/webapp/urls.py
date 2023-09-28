@@ -1,11 +1,12 @@
-from django.urls import path
+from django.urls import path, include
 from webapp import views
+
+
 urlpatterns = [
     path('', views.home, name='home'),
     path('register/', views.register, name='register'),
     path('login/', views.my_login, name='my_login'),
     path('user-logout/', views.user_logout, name='user_logout'),
-
     # CRUD
     path('dashboard/', views.dashboard, name='dashboard'),
     path('create-record/', views.create_record, name='create-record'),
